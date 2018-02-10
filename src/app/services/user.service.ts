@@ -18,11 +18,11 @@ export class UserService {
   constructor(private http: Http) { }
 
   getAllUsers(): Observable<any> {
-    return this.http.get(this.urls.get).map(res => res.json());
+    return this.http.get('api/users').map(res => res.json());
   }
 
   saveUser(user: any) {
-    return this.http.post(this.urls.post, user).map(res => res.json());
+    return this.http.post('api/users', user).map(res => res.json());
   }
 
 }
